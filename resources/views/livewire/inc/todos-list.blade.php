@@ -1,3 +1,6 @@
+@php
+    use Stichoza\GoogleTranslate\GoogleTranslate;
+@endphp
 <div wire:key='{{ $todo->id }}'
     class="todo mb-5 card px-5 py-6 bg-white col-span-1 border-t-2 border-blue-500 hover:shadow">
     <div class="flex justify-between  items-center space-x-2">
@@ -14,7 +17,9 @@
                     class="bg-gray-100  text-gray-900 text-sm rounded block w-full p-2.5">
                     @error('editingTodoNewName')
 
-                    <span class="text-red-500 text-xs block">{{ $message }}</span>
+                    <span class="text-red-500 text-xs block">
+                      {{GoogleTranslate::trans( $message ,'en')}}
+                    </span>
                     @enderror
             </div>
 

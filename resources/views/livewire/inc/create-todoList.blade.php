@@ -1,4 +1,7 @@
-    <div class="container content py-6 mx-auto">
+   @php
+    use Stichoza\GoogleTranslate\GoogleTranslate;
+@endphp
+   <div class="container content py-6 mx-auto">
 
         <div class="mx-auto">
             <div id="create-form" class="hover:shadow p-6 bg-white border-blue-500 border-t-2">
@@ -13,9 +16,9 @@
                             <input type="text"wire:model='name' id="title" placeholder="Todo.."
                                 class="bg-gray-100  text-gray-900 text-sm rounded block w-full p-2.5">
 
-                               
+
                                 @error('name')
-                                <span class="text-red-500 text-xs mt-3 block ">{{ $message }}</span>
+                                <span class="text-red-500 text-xs mt-3 block "> {{GoogleTranslate::trans( $message ,'ar')}}</span>
                                 @enderror
 
                         </div>
